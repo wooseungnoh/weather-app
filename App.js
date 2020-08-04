@@ -9,8 +9,6 @@ const API_KEY = "9d2dc547abdd90969255612b5761cc82";
 export default class extends React.Component {
   state = {
     isLoading: true,
-    temp:0,
-    condition:"Clear"
   };
   getWeather = async (lat, lon) => {
     const {
@@ -29,9 +27,7 @@ export default class extends React.Component {
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
-      console.log(latitude);
       this.getWeather(latitude, longitude);
-      this.setState({ isLoading: false });
     } catch (e) {
       Alert.alert("Can't find you");
     }

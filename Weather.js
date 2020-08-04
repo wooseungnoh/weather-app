@@ -64,7 +64,6 @@ const weatherOptions = {
 };
 
 export default function Weather({ temp, condition }) {
-  console.log(condition);
   return (
     <LinearGradient
       // Background Linear Gradient
@@ -72,12 +71,12 @@ export default function Weather({ temp, condition }) {
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
-        <MaterialCommunityIcons
-          name={weatherOptions[condition].iconName}
-          size={96}
-          color="white"
-        />
-        <Text style={styles.temp}>{temp}º</Text>
+      <MaterialCommunityIcons
+        name={weatherOptions[condition].iconName}
+        size={96}
+        color="white"
+      />
+      <Text style={styles.temp}>{temp}º</Text>
     </LinearGradient>
   );
 }
